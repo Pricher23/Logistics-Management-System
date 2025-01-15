@@ -28,7 +28,7 @@ public class Main {
         }
     }
 
-    // Loads our saved data when the program starts
+    // Loads saved data when the program starts
     private static void loadInitialData() {
         warehouseManager.loadInventoryFromFile("src/Data/warehouse_inventory.csv");
         logisticsManager.loadLogisticsFromFile("src/Data/logistics_network.txt");
@@ -43,7 +43,7 @@ public class Main {
         }
     }
 
-    // Main menu of our program
+    // Main menu of the program
     private static void mainMenu() {
         while (true) {
             System.out.println("\n=== Logistics Management System ===");
@@ -145,7 +145,7 @@ public class Main {
             System.out.print("Enter priority (1-10): ");
             priority = getValidatedInput();
         } else {
-            priority = 0;  // Not used for existing items
+            priority = 0;
         }
         
         System.out.print("Enter quantity: ");

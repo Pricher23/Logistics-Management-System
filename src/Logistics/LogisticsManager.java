@@ -5,14 +5,14 @@ import java.io.*;
 import java.util.*;
 
 public class LogisticsManager {
-    // Keeps track of all locations in our network
+    // Keeps track of all locations in network
     private Map<String, Location> locations;
 
     public LogisticsManager() {
         this.locations = new HashMap<>();
     }
 
-    // Adds a new location to our network
+    // Adds a new location to network
     public void addLocation(String name) {
         if (locations.containsKey(name)) {
             throw new IllegalArgumentException("Location already exists: " + name);
@@ -33,12 +33,12 @@ public class LogisticsManager {
             throw new IllegalArgumentException("Both locations must exist");
         }
 
-        // Add road in both directions (it's a two-way road)
+        // Add road in both directions
         fromLoc.addConnection(toLoc, distance);
         toLoc.addConnection(fromLoc, distance);
     }
 
-    // Uses our binary heap to find the shortest path between locations
+    // Uses binary heap to find the shortest path between locations
     public List<String> findShortestPath(String start, String end) {
         if (!locations.containsKey(start) || !locations.containsKey(end)) {
             return null;
@@ -55,7 +55,7 @@ public class LogisticsManager {
         }
         distances.put(start, 0);
 
-        // Start with our starting location
+        // Start with starting location
         minHeap.insert(new Node(start, 0));
 
         // Main loop of Dijkstra's algorithm
@@ -83,7 +83,7 @@ public class LogisticsManager {
                 String nextLocation = connection.getKey().getName();
                 int newDistance = distances.get(currentLocation) + connection.getValue();
 
-                // If we found a shorter path, update it
+                // If found a shorter path, update it
                 if (newDistance < distances.get(nextLocation)) {
                     System.out.println("Found better path to " + nextLocation + 
                                      " (new distance: " + newDistance + ")");
@@ -94,7 +94,7 @@ public class LogisticsManager {
             }
         }
 
-        // If we couldn't reach the end, return null
+        // If couldn't reach the end, return null
         if (!previous.containsKey(end)) {
             return null;
         }

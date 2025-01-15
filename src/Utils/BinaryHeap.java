@@ -11,7 +11,7 @@ public class BinaryHeap<T extends Comparable<T>> {
         size = 0;
     }
 
-    // Makes sure we have enough space in our array
+    // Makes sure it has enough space in array
     private void ensureCapacity() {
         if (size == elements.length) {
             Object[] newElements = new Object[elements.length * 2];
@@ -91,7 +91,7 @@ public class BinaryHeap<T extends Comparable<T>> {
             minIndex = rightChild;
         }
 
-        // If we found a smaller child, swap and continue down
+        // If found a smaller child, swap and continue down
         if (minIndex != index) {
             swap(index, minIndex);
             heapifyDown(minIndex);
@@ -102,7 +102,7 @@ public class BinaryHeap<T extends Comparable<T>> {
     public boolean isEmpty() { return size == 0; }
     public int size() { return size; }
 
-    // Shows current state of heap - helpful for debugging
+    // Shows current state of heap
     @SuppressWarnings("unchecked")
     public void printHeap() {
         System.out.println("\nCurrent Binary Heap state:");

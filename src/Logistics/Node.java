@@ -34,7 +34,7 @@ public class Node implements Comparable<Node> {
         System.out.println("\n=== Binary Heap Demonstration with Network Data ===");
         BinaryHeap<Node> heap = new BinaryHeap<>();
         
-        // Add each location to our heap
+        // Add each location to heap
         System.out.println("Inserting nodes from network:");
         for (Map.Entry<String, Map<String, Integer>> entry : network.entrySet()) {
             String location = entry.getKey();
@@ -50,7 +50,7 @@ public class Node implements Comparable<Node> {
             heap.printHeap();
         }
         
-        // Now remove them in order
+        // Remove them in order
         System.out.println("\nRemoving nodes in order:");
         while (!heap.isEmpty()) {
             Node min = heap.extractMin();

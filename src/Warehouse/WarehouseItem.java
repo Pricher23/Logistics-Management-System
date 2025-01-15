@@ -3,7 +3,7 @@ package Warehouse;
 public class WarehouseItem implements Comparable<WarehouseItem> {
     private String id;
     private String name;
-    private int priority;  // Higher number means higher priority (1-10)
+    private int priority;
     private int quantity;
 
     public WarehouseItem(String id, String name, int priority, int quantity) {
@@ -13,7 +13,7 @@ public class WarehouseItem implements Comparable<WarehouseItem> {
         this.quantity = quantity;
     }
 
-    // Basic getters for our item properties
+    // Basic getters for item properties
     public String getId() {
         return id;
     }
@@ -38,7 +38,6 @@ public class WarehouseItem implements Comparable<WarehouseItem> {
     // Needed for sorting items by priority
     @Override
     public int compareTo(WarehouseItem other) {
-        // Higher priority numbers come first
         return Integer.compare(other.priority, this.priority);
     }
 

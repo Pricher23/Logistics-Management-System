@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class WarehouseManager {
-    // List to store all our items
+    // List to store all items
     private List<WarehouseItem> inventory;
 
     public WarehouseManager() {
@@ -39,7 +39,7 @@ public class WarehouseManager {
         }
     }
 
-    // Checks if we already have this item
+    // Checks if warehouse already has this item
     public boolean itemExists(String name) {
         return inventory.stream()
             .anyMatch(item -> item.getName().equalsIgnoreCase(name));
@@ -52,7 +52,7 @@ public class WarehouseManager {
             .forEach(System.out::println);
     }
 
-    // Gets item to dispatch (highest priority or specific item)
+    // Gets item to dispatch
     public WarehouseItem dispatchItem(String name) {
         if (inventory.isEmpty()) {
             throw new IllegalStateException("Warehouse is empty");

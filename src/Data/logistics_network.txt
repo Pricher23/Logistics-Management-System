@@ -1,0 +1,8 @@
+Baia Mare: Timisoara(10)
+Bucuresti: Iasi(6), Cluj-Napoca(8)
+Cluj-Napoca: Arad(7), Bucuresti(8)
+Sibiu: Iasi(17)
+Arad: Cluj-Napoca(7), Iasi(5)
+Constanta: Timisoara(9)
+Iasi: Sibiu(17), Arad(5), Bucuresti(6)
+Timisoara: Baia Mare(10), Constanta(9)
